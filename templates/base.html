@@ -1,0 +1,31 @@
+{% load static %}
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{% block title %} {% endblock %}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+        <link rel="shortcut icon" href="/static/assets/dollar-icon.svg" type="image/svg" />
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        {% block static %} {% endblock %}
+    </head>
+    <body>
+        <!-- menu  -->
+        <nav>
+            <ul>
+                <img src="/static/assets/logo.svg" alt="logo" />
+            
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'trade' %}">Trade</a></li>
+                <li><a href="{% url 'news' %}">News</a></li>
+                <li><a href="{% url 'about_us' %}">About us</a></li>
+            </ul>
+        </nav>
+
+            <!-- content  -->
+        {% block content %} {% endblock %}
+    </body>
+</html>

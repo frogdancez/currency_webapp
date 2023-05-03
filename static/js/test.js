@@ -54,7 +54,7 @@ function displayDate() {
     hour: 'numeric',
     minute: 'numeric'
   });
-  dateHourElem.textContent = `Atualizado em: ${formattedDate} às ${formattedTime}`;
+  dateHourElem.textContent = `Time: ${formattedDate} and ${formattedTime}`;
 }
 
 fetchData();
