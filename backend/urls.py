@@ -5,4 +5,5 @@ urlpatterns = [
     path('', index, name='index'),
     path('spot/<str:currency1>/<str:currency2>', spot, name='spot'),
     path('forward/<str:currency1>/<str:currency2>', forward, name='forward'),
+    path('history/<str:currency>', history, name='history'),
 ]
