@@ -7,4 +7,6 @@ urlpatterns = [
     path('trade/', trade, name='trade'),
     path('about_us/', about_us, name='about_us'),
     path('news/', news, name='news'),
+
+    path('info/<str:currency>', info, name='info'),
 ]

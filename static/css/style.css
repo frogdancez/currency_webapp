@@ -160,6 +160,10 @@
     gap: 0.625rem;
     align-items: center;
   }
+
+  .cards:hover {
+    border-color: #005e27;
+  }
   
   .cards div {
     display: flex;
