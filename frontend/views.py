@@ -1,11 +1,14 @@
 from django.shortcuts import render
+from backend.data import interest_rates
 
-# Create your views here.
 def test(request):
     return render(request, 'test.html')
 
 def home(request):
-    return render(request, 'home.html')
+    context={
+        "data": interest_rates.
+    }
+    return render(request, 'home.html', context=context)
 
 def news(request):
     return render(request, 'news.html')

@@ -8,7 +8,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-        <link rel="shortcut icon" href="/static/assets/dollar-icon.svg" type="image/svg" />
+        <link rel="shortcut icon" href="/static/assets/logo.svg" type="image/svg" />
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
         {% block static %} {% endblock %}
     </head>
@@ -16,8 +16,6 @@
         <!-- menu  -->
         <nav>
             <ul>
-                <img src="/static/assets/logo.svg" alt="logo" />
-            
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'trade' %}">Trade</a></li>
                 <li><a href="{% url 'news' %}">News</a></li>
