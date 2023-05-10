@@ -5,10 +5,7 @@ def test(request):
     return render(request, 'test.html')
 
 def home(request):
-    context={
-        "data": interest_rates.
-    }
-    return render(request, 'home.html', context=context)
+    return render(request, 'home.html')
 
 def news(request):
     return render(request, 'news.html')
