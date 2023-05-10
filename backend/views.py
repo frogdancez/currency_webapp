@@ -21,8 +21,10 @@ def forward(request, currency1, currency2):
         i_currency1 = interest_rates[currency1]
         i_currency2 = interest_rates[currency2]
 
-        spot = spot(request, currency1, currency2)
+        url = 'https://api.exchangerate.host/latest?base=' + currency1
+        response = requests.get(url)
+        result = response.json()
 
-        return JsonResponse({"forward_rate": spot * (1 + i_currency1) / (1 + i_currency2)})
+        return JsonResponse({"forward_rate " + str(currency1) + str(currency2) : result['rates'][currency2] * (1 + i_currency1) / (1 + i_currency2)})
     except Exception as e:
         return JsonResponse({"error": e})
