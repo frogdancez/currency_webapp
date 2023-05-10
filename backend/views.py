@@ -33,11 +33,9 @@ def forward(request, currency1, currency2):
 def history(request, currency):
     try:
         end = datetime.now()
-        start = end - timedelta(days=7)
+        start = end - timedelta(days=7) # get data from range a week
 
         url = 'https://api.exchangerate.host/timeseries?base=' + currency + "&start_date=" + str(start.strftime("%Y-%m-%d")) + "&end_date=" + str(end.strftime("%Y-%m-%d"))
-        print("=====================================")
-        print(url)
         response = requests.get(url)
         result = response.json()
 

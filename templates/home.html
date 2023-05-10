@@ -1,8 +1,51 @@
-{% extends 'base.html' %} {% load static %}
-{% block title %} Home {% endblock %}
-{% block static %}
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
-{% endblock %}
-{% block content %}
-<h1>home</h1>
-{% endblock %}
+    {% extends 'base.html' %} {% load static %}
+    {% block title %} Home {% endblock %}
+    {% block static %}
+    <script defer src="/static/js/test.js"></script>
+    {% endblock %}
+    {% block content %}
+    <header>
+    <div class="hero">
+    <div class="title">
+        <h1>Currency</h1>
+        <h1>Tracker</h1>
+
+        <span>Smart platform for trading and exchange currency</span>
+    </div>
+
+    <figure>
+        <img src="/static/assets/logo.svg" alt="logo" />
+    </figure>
+    </div>
+    </header>
+
+    <div class="container">
+    <div class="update">
+    <span class="notification"></span>
+
+    <p id="date-hour"></p>
+    </div>
+
+    <section class="container-values stocks">
+    <h3>Currency</h3>
+    <div class="line"></div>
+    <div class="content">
+        <!-- start for  -->
+        <div class="cards">
+            <img src="/static/assets/stock-icon.svg" alt="bovespa" />
+
+            <div data-id="IBOVESPA">
+                <span class="card-title">Índice Bovespa</span>
+                <span class="card-value" data-id="IBOVESPA">-</span>
+            </div>
+        </div>
+        <!-- end for  -->
+
+    </div>
+    </section>
+
+    <footer>
+    <a href="https://birobirobiro.dev" target="_blank">birobirobiro.dev</a>
+    </footer>
+    </div>
+    {% endblock %}

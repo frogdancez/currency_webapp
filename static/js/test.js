@@ -13,6 +13,4 @@ function displayDate() {
   dateHourElem.textContent = `${formattedDate} and ${formattedTime}`;
 }
 
-fetchData();
-setInterval(fetchData);
-setInterval(displayDate);
+displayDate();
