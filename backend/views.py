@@ -12,7 +12,7 @@ def spot(request, currency1, currency2):
         url = 'https://api.exchangerate.host/latest?base=' + currency1
         response = requests.get(url)
         result = response.json()
-        return JsonResponse({str(currency1) + str(currency2) : result['rates'][currency2]})
+        return JsonResponse({str(currency1) + '/' + str(currency2) : result['rates'][currency2]})
     except Exception as e:
         return JsonResponse({"error": e})
     
@@ -25,6 +25,6 @@ def forward(request, currency1, currency2):
         response = requests.get(url)
         result = response.json()
 
-        return JsonResponse({"forward_rate " + str(currency1) + str(currency2) : result['rates'][currency2] * (1 + i_currency1) / (1 + i_currency2)})
+        return JsonResponse({"forward_rate " + str(currency1) + '/' + str(currency2) : result['rates'][currency2] * (1 + i_currency1) / (1 + i_currency2)})
     except Exception as e:
         return JsonResponse({"error": e})
