@@ -1,8 +1,48 @@
-{% extends 'base.html' %} {% load static %}
-{% block title %} Home {% endblock %}
-{% block static %}
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
-{% endblock %}
-{% block content %}
-<h1>home</h1>
-{% endblock %}
+    {% extends 'base.html' %} {% load static %}
+    {% block title %} Home {% endblock %}
+    {% block static %}
+    <!-- <script defer src="/static/js/time.js"></script> -->
+    {% endblock %}
+    {% block content %}
+    <header>
+    <div class="hero">
+    <div class="title">
+        <h1>Currency</h1>
+        <h1>Tracker</h1>
+
+    </div>
+
+    </div>
+    </header>
+
+    <div class="container">
+    <div class="update">
+    <span class="notification"></span>
+
+    <p id="date-hour"></p>
+    </div>
+
+    <section class="container">
+    <h3>Currency</h3>
+    <div class="line"></div>
+    <div class="content">
+        <!-- start for  -->
+        {% for currency in currencies %}
+        <a href="/info/{{currency}}">
+            <div class="cards">
+                <img src="/static/assets/{{currency}}_icon.svg" alt={{currency}}_icon />
+
+                <div>
+                    <span class="card-title">{{currency}}</span>
+                    <span class="card-value">-</span>
+                </div>
+            </div>
+        </a>
+        {% endfor%}
+        <!-- end for  -->
+
+    </div>
+    </section>
+
+    </div>
+    {% endblock %}

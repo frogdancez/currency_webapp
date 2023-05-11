@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %} {{currency}} {% endblock %}
+{% block static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+{% block content %}
+
+<header>
+    <div class="hero">
+    <div class="title">
+        <h1>{{currency}}</h1>
+
+    </div>
+
+    </div>
+    </header>
+
+    <div class="container">
+        <div class="update">
+        <span class="notification"></span>
+
+        <p id="date-hour"></p>
+        </div>
+
+        <section class="container">
+        <h3>Currency</h3>
+        <div class="line"></div>
+        <!-- Load d3.js -->
+        <script src="https://d3js.org/d3.v4.js"></script>
+        <!-- Create a div where the graph will take place -->
+        <div id="linechart_d3" style="width: 100%;">ok</div>
+        <!-- line chart  -->
+        <script src="{% static 'js/linechart_d3.js' %}"></script>
+
+        </section>
+
+    </div>
+
+{% endblock %}
